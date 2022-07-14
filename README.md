@@ -2,10 +2,10 @@
 
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
-| Branch  |                   GitHub Action Status                    |
-| :-----: | :-------------------------------------------------------: |
-|  main   |    ![pre-commit][pre-commit-main] ![build][build-main]    |
-| develop | ![pre-commit][pre-commit-develop] ![build][build-develop] |
+| Branch  |       GitHub Action Status        |
+| :-----: | :-------------------------------: |
+|  main   |  ![pre-commit][pre-commit-main]   |
+| develop | ![pre-commit][pre-commit-develop] |
 
 Repository for nextflow tool definitions.
 
@@ -67,8 +67,6 @@ See `tools/cancerit/cgpPindel` and `workflows/cancerit/cgpPindel` for a complete
 
 <!-- refs -->
 
-[build-develop]: https://github.com/cynapse-ccri/nf-cynapse/actions/workflows/build.yaml/badge.svg?branch=develop
-[build-main]: https://github.com/cynapse-ccri/nf-cynapse/actions/workflows/build.yaml/badge.svg?branch=main
 [cynapse-ccri-quay]: https://quay.io/organization/cynapse-ccri
 [git-flow]: https://datasift.github.io/gitflow/IntroducingGitFlow.html
 [hub-flow]: https://datasift.github.io/gitflow/TheHubFlowTools.html
