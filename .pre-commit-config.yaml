@@ -19,3 +19,8 @@ repos:
     rev: 0.7.14
     hooks:
     -   id: mdformat
+# -   repo: https://github.com/nvuillam/npm-groovy-lint
+#     rev: v9.5.0
+#     hooks:
+#     -   id: npm-groovy-lint
+#         args: ['--files', '**/.nf']

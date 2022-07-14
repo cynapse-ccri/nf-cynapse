@@ -4,9 +4,9 @@ nextflow.preview.dsl=2
 # TODO
 
 
-def repository_name = "cynapse-ccri/????"
-def workflow_path = "workflows/template"
-def tool = "example"
+def repository_name = "cynapse-ccri/cynapse-nf"
+def workflow_path = "workflows/cancerit/cgpPindel"
+def tool = "cgpPindel-somatic"
 
 def helpMessage() {
     log.info """

@@ -3,7 +3,7 @@
 See:
 
 - `tools/template.nf` for a process template.
-- `tools/cgpPindel/3.10.0/pindel_pl.nf` for a real example
+- `tools/cancerit/cgpPindel/3.10.0/pindel_pl.nf` for a real example
 
 Both follow these conventions:
 
@@ -14,14 +14,7 @@ Both follow these conventions:
 - Use 4 spaces per indentation level.
 - All input and output identifiers should descriptive. Use informative names like unaligned_sequences, reference_genome,
   phylogeny, or aligned_sequences instead of foo_input, foo_file, result, input, output, and so forth.
-- Define two *labels* for each process, containing toolname, version and command separated by an underscore.
-  - BWA_0.7.17
-  - BWA_0.7.17_MEM
-- Define a tag to each process, containing toolname, command, sample_id and/or rg_id.
-  - `{"BWA MEM ${sample_id} - ${rg_id}"}`
 - Set a (hosted) container for each process.
-- Add 'set -euo pipefail' to each process.
-  - `shell = ['/bin/bash', '-euo', 'pipefail']`
 - Do not define any runtime settings like `cpus`, `memory` and `time` - these belong in the workflow configs.
 - Set process parameters on include:
   - `include process from 'path/to/process.nf' params(optional: '')`
