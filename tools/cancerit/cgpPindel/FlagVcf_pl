@@ -1,0 +1,42 @@
+process flagvcf_pl {
+    // edit this block
+    program_name = 'FlagVcf.pl'
+    tool_ver = '3.10.0'
+    tool_name = 'cgpPindel'
+    container = "quay.io/wtsicgp/cgppindel:${tool_ver}"
+
+    // don't change these (unless sample_id is not applicable)
+    tag {"${tool_name} ${program_name} ${sample_id}"}
+    label "${tool_name}_${tool_ver}"
+    label "${tool_name}_${tool_ver}_${program_name}"
+    // makes sure pipelines fail properly, plus errors and undef values
+    shell = ['/bin/bash', '-euo', 'pipefail']
+
+    // edit as necessary
+    input:
+    val unmatched_ext
+    path filter
+    tuple path('genes.bed.gz'), path('genes.bed.gz.tbi')
+    tuple path("unmatched.${unmatched_ext}.gz"), path("unmatched.${unmatched_ext}.gz.tbi")
+    tuple path('simplerepeats.bed.gz'), path('simplerepeats.bed.gz.tbi')
+    tuple path('input.vcf.gz'), path('input.vcf.gz.tbi')
+    // optional
+    path softfil
+    val apid
+    val outdir
+
+    output:
+    tuple path('*.pindel.flagged.vcf.gz'), path('*.pindel.flagged.vcf.gz.tbi')
+
+    // not running flagging, use a workflow
+    script:
+    def applySoft = softfil.name != 'NO_FILE' ? "-sr $softfil" : ''
+    def applyProcId = apid != 'NO_PROCESS' ? "-p $apid" : ''
+    """
+    MT_NAME=\$(tabix -H input.vcf.gz | grep '^##SAMPLE=<ID=TUMOUR' | perl -ne 'm/SampleName=([^>]+)/; print \$1;')
+    WT_NAME=\$(tabix -H input.vcf.gz | grep '^##SAMPLE=<ID=NORMAL' | perl -ne 'm/SampleName=([^>]+)/; print \$1;')
+    FlagVcf.pl -r ${filter} -a genes.bed.gz -u unmatched.${unmatched_ext}.gz -s simplerepeats.bed.gz -i input.vcf.gz -o \${MT_NAME}_vs_\${WT_NAME}.pindel.flagged.vcf ${applySoft} ${applyProcId}
+    bgzip -c \${MT_NAME}_vs_\${WT_NAME}.pindel.flagged.vcf > \${MT_NAME}_vs_\${WT_NAME}.pindel.flagged.vcf.gz
+    tabix -p vcf \${MT_NAME}_vs_\${WT_NAME}.pindel.flagged.vcf.gz
+    """
+}

@@ -1,12 +1,11 @@
 #!/usr/bin/env nextflow
-nextflow.preview.dsl=2
+nextflow.preview.dsl = 2
 
-# TODO
+// TODO
 
-
-def repository_name = "cynapse-ccri/????"
-def workflow_path = "workflows/template"
-def tool = "example"
+def repository_name = 'cynapse-ccri/cynapse-nf'
+def workflow_path = 'workflows/cancerit/cgpPindel'
+def tool = 'cgpPindel-somatic'
 
 def helpMessage() {
     log.info """
@@ -37,7 +36,7 @@ def workspace = params.outdir
 
 // define the workflow
 workflow {
-    //
+//
 }
 
 // Workflow completion notification
