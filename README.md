@@ -67,12 +67,12 @@ See `tools/cancerit/cgpPindel` and `workflows/cancerit/cgpPindel` for a complete
 
 <!-- refs -->
 
-[build-develop]: https://github.com/cynapse-ccri/nf-tools/actions/workflows/build.yaml/badge.svg?branch=develop
-[build-main]: https://github.com/cynapse-ccri/nf-tools/actions/workflows/build.yaml/badge.svg?branch=main
+[build-develop]: https://github.com/cynapse-ccri/nf-cynapse/actions/workflows/build.yaml/badge.svg?branch=develop
+[build-main]: https://github.com/cynapse-ccri/nf-cynapse/actions/workflows/build.yaml/badge.svg?branch=main
 [cynapse-ccri-quay]: https://quay.io/organization/cynapse-ccri
 [git-flow]: https://datasift.github.io/gitflow/IntroducingGitFlow.html
 [hub-flow]: https://datasift.github.io/gitflow/TheHubFlowTools.html
 [lifebit-web]: https://www.lifebit.ai/
 [pre-commit]: https://pre-commit.com/
-[pre-commit-develop]: https://github.com/cynapse-ccri/nf-tools/actions/workflows/pre-commit.yaml/badge.svg?branch=develop
-[pre-commit-main]: https://github.com/cynapse-ccri/nf-tools/actions/workflows/pre-commit.yaml/badge.svg?branch=main
+[pre-commit-develop]: https://github.com/cynapse-ccri/nf-cynapse/actions/workflows/pre-commit.yaml/badge.svg?branch=develop
+[pre-commit-main]: https://github.com/cynapse-ccri/nf-cynapse/actions/workflows/pre-commit.yaml/badge.svg?branch=main
