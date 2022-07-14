@@ -6,7 +6,7 @@ process Command {
     container = "quay.io/wtsicgp/cgppindel:${tool_ver}"
 
     // don't change these (unless sample_id is not applicable)
-    tag {"${tool_name} ${program_name} ${sample_id}"}
+    tag { "${tool_name } ${program_name } ${sample_id }" }
     label "${tool_name}_${tool_ver}"
     label "${tool_name}_${tool_ver}_${program_name}"
     // makes sure pipelines fail properly, plus errors and undef values
@@ -19,7 +19,7 @@ process Command {
 
     output:
         tuple(sample_id, path(output_file), emit: output_file)
-        path("log.txt", emit: log)
+        path('log.txt', emit: log)
 
     script:
         """
