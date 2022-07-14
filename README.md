@@ -14,6 +14,7 @@ Repository for nextflow tool definitions.
   - [hub-flow](#hub-flow)
   - [nextflow](#nextflow)
   - [Versioning](#versioning)
+- [pre-commit](#pre-commit)
   - [Coding guidance](#coding-guidance)
 
 Although nf-core is an excellent project the integration cycle and code ownership can become an issue.  More specifically
@@ -48,6 +49,13 @@ This project uses the `<year>.<month>[.<inc>]` method for versioning:
 The individual tools have versions aligned to the tool release, the repo release is for user convenience when referencing
 rather than use commit IDs.
 
+## pre-commit
+
+In order to provide a level of coding standards and assurance this project has pre-commit hooks.
+
+Where possible pre-commit hooks are executed as part of CI and block progress, to ensure this is minimised activate checking
+in your local environment.  Please see the [pre-commit] docs for how to do this.
+
 ### Coding guidance
 
 Please see the relevant [`tools`](tools/README.md) or `workflows`(workflows/README.md) README files.
@@ -62,5 +70,6 @@ See `tools/cancerit/cgpPindel` and `workflows/cancerit/cgpPindel` for a complete
 [git-flow]: https://datasift.github.io/gitflow/IntroducingGitFlow.html
 [hub-flow]: https://datasift.github.io/gitflow/TheHubFlowTools.html
 [lifebit-web]: https://www.lifebit.ai/
+[pre-commit]: https://pre-commit.com/
 [pre-commit-develop]: https://github.com/cynapse-ccri/nf-tools/actions/workflows/pre-commit.yaml/badge.svg?branch=develop
 [pre-commit-main]: https://github.com/cynapse-ccri/nf-tools/actions/workflows/pre-commit.yaml/badge.svg?branch=main
