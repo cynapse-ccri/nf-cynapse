@@ -56,6 +56,9 @@ In order to provide a level of coding standards and assurance this project has p
 Where possible pre-commit hooks are executed as part of CI and block progress, to ensure this is minimised activate checking
 in your local environment.  Please see the [pre-commit] docs for how to do this.
 
+If new file types are added please check to see if hooks are available to validate these and implement as necessary in
+`.pre-commit-config.yaml`.
+
 ### Coding guidance
 
 Please see the relevant [`tools`](tools/README.md) or `workflows`(workflows/README.md) README files.
