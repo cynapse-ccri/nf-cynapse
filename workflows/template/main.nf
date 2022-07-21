@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-nextflow.preview.dsl = 2
+nextflow.enable.dsl = 2
 
 def repository_name = 'cynapse-ccri/????'
 def workflow_path = 'workflows/template'
