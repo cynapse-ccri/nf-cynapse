@@ -57,7 +57,7 @@ nextflow run -with-report -profile ... \
 Ensure the correct `-profile`s are specified, e.g.
 
 ```bash
-nextflow run -with-report -profile singularity -profile slurm \
+nextflow run -with-report -profile singularity,slurm \
   ...
 ```
 
